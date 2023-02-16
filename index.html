@@ -15,14 +15,58 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
+    .outsideBtn{
+      color: white;
+      background-color: #041E42;
+      border-radius: 5px;
+      font-size: 20px;
+      width: 120px;
+      height: 50px;
+      box-shadow: 0px 10px 24px #999;
+      border: 1px solid #041E42;
+      margin-right: 32px;
+      margin-bottom: 16px;
+    }
+    .outsideBtn:hover{
+      color: #e0e0e0;
+      background-color: #07377a;
+      box-shadow: 0px 10px 24px white;
+      border: 1px solid #07377a;
+    }
+    .outsideBtn:focus{
+      color: #e0e0e0;
+      background-color: #07377a;
+      box-shadow: 0px 10px 24px white;
+      border: 1px solid #07377a;
+    }
   </style>
   <title>professor-card</title>
 </head>
 
 <body>
-  <professor-card></professor-card>
+  <div class="btnSpacing">
+    <button class="outsideBtn duplicate">Duplicate</button>
+    <button class="outsideBtn background">Background</button>
+    <button class="outsideBtn header">Heading</button>
+    <button class="outsideBtn deleter">Delete</button>
+    </div>
+
+  <div class="app">
+    <professor-card></professor-card>
+  </div>
 
   <script type="module" src="./src/professor-card.js"></script>
+
+  <script>
+    //duplicate element
+    document.querySelector('.duplicate').addEventListener('click', function(e) {
+    const itemToClone = document.querySelector('professor-card').cloneNode();
+    document.querySelector('.app').appendChild(itemToClone);
+    });
+
+    //change title
+
+  </script>
 </body>
 
 </html>
