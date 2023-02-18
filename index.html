@@ -19,13 +19,13 @@
       color: white;
       background-color: #041E42;
       border-radius: 5px;
-      font-size: 20px;
-      width: 120px;
-      height: 50px;
+      font-size: 16px;
+      width: 72px;
+      height: 40px;
       box-shadow: 0px 10px 24px #999;
       border: 1px solid #041E42;
-      margin-right: 32px;
-      margin-bottom: 16px;
+      margin-right: 8px;
+      margin-bottom: 8px;
     }
     .outsideBtn:hover{
       color: #e0e0e0;
@@ -45,14 +45,19 @@
 
 <body>
   <div class="btnSpacing">
-    <button class="outsideBtn duplicate">Duplicate</button>
-    <button class="outsideBtn background">Background</button>
-    <button class="outsideBtn header">Heading</button>
-    <button class="outsideBtn deleter">Delete</button>
-    </div>
+    <button class="outsideBtn duplicate">Multiply</button>
+    <button class="outsideBtn toggle">Toggle</button>
+    <button class="outsideBtn background">BG</button>
+    <button class="outsideBtn cardTitle">Heading</button>
+    <button class="outsideBtn deleteLast">Delete</button>
+  </div>
 
   <div class="app">
-    <professor-card></professor-card>
+    <professor-card>
+      <slot>      
+        <p>Professor Giacobe may look like a simple man but perceptions can be misleading. Underneath the facade of a simple college of IST professor lies the holiness of an <strong>IST GOD</strong>!</p>
+      </slot>
+    </professor-card>
   </div>
 
   <script type="module" src="./src/professor-card.js"></script>
@@ -60,12 +65,53 @@
   <script>
     //duplicate element
     document.querySelector('.duplicate').addEventListener('click', function(e) {
-    const itemToClone = document.querySelector('professor-card').cloneNode();
-    document.querySelector('.app').appendChild(itemToClone);
+      const itemToClone = document.querySelector('professor-card').cloneNode();
+      document.querySelector('.app').appendChild(itemToClone);
+    });
+
+    //change background
+    document.querySelector('.background').addEventListener('click', function(e) {
+      var color = "#FF69B4"
+      if(document.querySelector('professor-card').shadowRoot.querySelector(".card").style.background !== color){
+        document.querySelector('professor-card').shadowRoot.querySelector(".card").style.background = color;
+      }
+      else{
+        var original = "#D3D3D3";
+        document.querySelector('professor-card').shadowRoot.querySelector(".card").style.background = original;
+      }
+    });
+
+    //Toggle description
+    document.querySelector('.toggle').addEventListener('click', function(e) {
+      const details = document.querySelector('professor-card').shadowRoot.querySelector('details');
+      console.log(details);
+      if(details.getAttribute('open')){
+        details.removeAttribute('open');
+      }
+      else{
+        details.setAttribute('open', 'open');
+      }
     });
 
     //change title
+    document.querySelector('.cardTitle').addEventListener('click', function(e) {
+      let name = prompt("something else");
+      if (name){
+        document.querySelectorAll('professor-card').forEach((item) => {
+          document.querySelector('professor-card').title = name;
+        });
+      }  
+    });
 
+    //delete last element
+    document.querySelector('.deleteLast').addEventListener('click', function(e) {
+      if (document.querySelector('.app professor-card:last-child') !== document.querySelector('professor-card')){
+        document.querySelector('.app professor-card:last-child').remove();
+      }
+      else{
+        alert("YOU CANNOT PURGE THE CYBER CHADS!!!");
+      }
+    });
   </script>
 </body>
 
