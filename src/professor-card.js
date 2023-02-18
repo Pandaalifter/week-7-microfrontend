@@ -98,7 +98,6 @@ class ProfessorCard extends LitElement {
       border: 3px solid purple;
       box-shadow: 0px 8px 24px yellow;
     }
-
     @media only screen and (min-width: 800px) and (max-width: 1200px){
       .card{
         background-color: maroon;
