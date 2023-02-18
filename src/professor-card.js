@@ -10,7 +10,7 @@ class ProfessorCard extends LitElement {
     chadLabel: {type: String},
     top: {type: String},
     bottom: {type: String},
-    pic: {type: Image}
+    pic: {type: String}
   }
 
   static styles = css`
