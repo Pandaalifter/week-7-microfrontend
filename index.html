@@ -44,11 +44,11 @@
 
 <body>
   <div class="btnSpacing">
-    <button class="outsideBtn duplicate">Multiply</button>
-    <button class="outsideBtn toggle">Toggle</button>
-    <button class="outsideBtn background">BG</button>
-    <button class="outsideBtn cardTitle">Title</button>
-    <button class="outsideBtn deleteLast">Delete</button>
+    <button class="outsideBtn duplicateBtn">Multiply</button>
+    <button class="outsideBtn toggleBtn">Toggle</button>
+    <button class="outsideBtn backgroundBtn">BG</button>
+    <button class="outsideBtn titleBtn">Title</button>
+    <button class="outsideBtn deleteLastBtn">Delete</button>
   </div>
 
   <div class="app">
@@ -63,14 +63,14 @@
 
   <script>
     //duplicate element
-    document.querySelector('.duplicate').addEventListener('click', function(e) {
+    document.querySelector('.duplicateBtn').addEventListener('click', function(e) {
       const itemToClone = document.querySelector('professor-card').cloneNode();
       document.querySelector('.app').appendChild(itemToClone);
     });
 
     //change background
-    document.querySelector('.background').addEventListener('click', function(e) {
-      var card = document.querySelector('professor-card').shadowRoot.querySelector(".card");
+    document.querySelector('.backgroundBtn').addEventListener('click', function(e) {
+      let card = document.querySelector('professor-card').shadowRoot.querySelector(".card");
       if(!card.classList.contains("basic")){
         document.querySelector('professor-card').shadowRoot.querySelector(".card").classList.add("basic");
       }
@@ -80,7 +80,7 @@
     });
 
     //Toggle description
-    document.querySelector('.toggle').addEventListener('click', function(e) {
+    document.querySelector('.toggleBtn').addEventListener('click', function(e) {
       const details = document.querySelector('professor-card').shadowRoot.querySelector('details');
       console.log(details);
       if(details.getAttribute('open')){
@@ -92,17 +92,15 @@
     });
 
     //change title
-    document.querySelector('.cardTitle').addEventListener('click', function(e) {
+    document.querySelector('.titleBtn').addEventListener('click', function(e) {
       let name = prompt("something else");
       if (name){
-        document.querySelectorAll('professor-card').forEach((item) => {
           document.querySelector('professor-card').title = name;
-        });
       }  
     });
 
     //delete last element
-    document.querySelector('.deleteLast').addEventListener('click', function(e) {
+    document.querySelector('.deleteLastBtn').addEventListener('click', function(e) {
       if (document.querySelector('.app professor-card:last-child') !== document.querySelector('professor-card')){
         document.querySelector('.app professor-card:last-child').remove();
       }

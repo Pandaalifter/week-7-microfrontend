@@ -117,12 +117,13 @@ class ProfessorCard extends LitElement {
     this.subtitle = "Chad of Cyber IST";
     this.chadLabel = "Details";
     this.top = "Giacobe";
-    this.bottom = "Double Overlaid";
+    this.bottom = "Overlaid";
   }
 
   render() {
     return html`
       <div class="card">
+      
         <h1 class="title">${this.title}</h1>
         <h2 class="subtitle">${this.subtitle}</h2>
 
