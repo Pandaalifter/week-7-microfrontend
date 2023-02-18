@@ -9,7 +9,8 @@ class ProfessorCard extends LitElement {
     subtitle: {type: String},
     chadLabel: {type: String},
     top: {type: String},
-    bottom: {type: String}
+    bottom: {type: String},
+    pic: {type: Image}
   }
 
   static styles = css`
@@ -117,6 +118,7 @@ class ProfessorCard extends LitElement {
     this.chadLabel = "Details";
     this.top = "Giacobe";
     this.bottom = "Overlaid";
+    this.pic = '../assets/the-moment.png';
   }
 
   render() {
@@ -128,7 +130,7 @@ class ProfessorCard extends LitElement {
 
         <div class="giaImg">
           <meme-maker 
-            image-url="${chad}" 
+            image-url="${this.pic}" 
             top-text="${this.top}" 
             bottom-text="${this.bottom}">
           </meme-maker>
