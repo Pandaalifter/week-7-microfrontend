@@ -93,14 +93,19 @@
 
     //change title
     document.querySelector('.titleBtn').addEventListener('click', function(e) {
-      let name = "something else";
-      //let name = prompt("Cyber-chadification")
-      if (name!==document.querySelector('professor-card').title){
+      let name = prompt("Cyber-chadification");
+      if (name){
           document.querySelector('professor-card').title = name;
       }
-      else{
-        document.querySelector("professor-card").title = "Professor Giacobe";
-      }  
+      
+      // Both work, just felt the prior was more reusable
+      // let name = "something else";
+      // if (name!==document.querySelector('professor-card').title){
+      //     document.querySelector('professor-card').title = name;
+      // }
+      // else{
+      //   document.querySelector("professor-card").title = "Professor Giacobe";
+      // }  
     });
 
     //delete last element
