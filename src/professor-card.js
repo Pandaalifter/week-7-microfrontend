@@ -1,8 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js"; 
 
-const chad = new URL('../assets/the-moment.png', import.meta.url).href;
-
 class ProfessorCard extends LitElement {
   static properties = {
     title: {type: String, reflect: true},
