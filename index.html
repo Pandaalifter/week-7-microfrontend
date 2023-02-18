@@ -20,12 +20,11 @@
       background-color: #041E42;
       border-radius: 5px;
       font-size: 16px;
-      width: 72px;
+      width: 68px;
       height: 40px;
       box-shadow: 0px 10px 24px #999;
       border: 1px solid #041E42;
-      margin-right: 8px;
-      margin-bottom: 8px;
+      margin: 8px;
     }
     .outsideBtn:hover{
       color: #e0e0e0;
@@ -48,7 +47,7 @@
     <button class="outsideBtn duplicate">Multiply</button>
     <button class="outsideBtn toggle">Toggle</button>
     <button class="outsideBtn background">BG</button>
-    <button class="outsideBtn cardTitle">Heading</button>
+    <button class="outsideBtn cardTitle">Title</button>
     <button class="outsideBtn deleteLast">Delete</button>
   </div>
 
@@ -71,13 +70,12 @@
 
     //change background
     document.querySelector('.background').addEventListener('click', function(e) {
-      var color = "#FF69B4"
-      if(document.querySelector('professor-card').shadowRoot.querySelector(".card").style.background !== color){
-        document.querySelector('professor-card').shadowRoot.querySelector(".card").style.background = color;
+      var card = document.querySelector('professor-card').shadowRoot.querySelector(".card");
+      if(!card.classList.contains("basic")){
+        document.querySelector('professor-card').shadowRoot.querySelector(".card").classList.add("basic");
       }
       else{
-        var original = "#D3D3D3";
-        document.querySelector('professor-card').shadowRoot.querySelector(".card").style.background = original;
+        document.querySelector('professor-card').shadowRoot.querySelector(".card").classList.remove("basic");
       }
     });
 

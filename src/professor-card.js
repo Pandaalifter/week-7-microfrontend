@@ -28,6 +28,7 @@ class ProfessorCard extends LitElement {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
       margin-bottom: 10px;
+      margin-left: 8px;
     }
     .textbox{
       font-size: 15px;
@@ -98,9 +99,9 @@ class ProfessorCard extends LitElement {
       box-shadow: 0px 8px 24px yellow;
     }
 
-    @media only screen and (min-width: 600px) and (max-width: 1200px){
+    @media only screen and (min-width: 800px) and (max-width: 1200px){
       .card{
-        background-color: red;
+        background-color: maroon;
       }
     }
     @media only screen and (max-width: 500px){
