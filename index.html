@@ -93,9 +93,13 @@
 
     //change title
     document.querySelector('.titleBtn').addEventListener('click', function(e) {
-      let name = prompt("something else");
-      if (name){
+      let name = "something else";
+      //let name = prompt("Cyber-chadification")
+      if (name!==document.querySelector('professor-card').title){
           document.querySelector('professor-card').title = name;
+      }
+      else{
+        document.querySelector("professor-card").title = "Professor Giacobe";
       }  
     });
 
