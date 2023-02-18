@@ -138,7 +138,7 @@ class ProfessorCard extends LitElement {
           <details>
             <summary class="haxbtn">${this.chadLabel}</summary>
             <div class="description">
-              <slot></slot>
+              <slot name="gospel"></slot>
             </div>
           </details>
 

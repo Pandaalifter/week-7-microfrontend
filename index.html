@@ -53,9 +53,7 @@
 
   <div class="app">
     <professor-card>
-      <slot>      
-        <p>Professor Giacobe may look like a simple man but perceptions can be misleading. Underneath the facade of a simple college of IST professor lies the holiness of an <strong>IST GOD</strong>!</p>
-      </slot>
+        <p slot="gospel">Professor Giacobe may look like a simple man but perceptions can be misleading. Underneath the facade of a simple college of IST professor lies the holiness of an <strong>IST GOD</strong>!</p>
     </professor-card>
   </div>
 
@@ -64,7 +62,7 @@
   <script>
     //duplicate element
     document.querySelector('.duplicateBtn').addEventListener('click', function(e) {
-      const itemToClone = document.querySelector('professor-card').cloneNode();
+      const itemToClone = document.querySelector('professor-card').cloneNode(true);
       document.querySelector('.app').appendChild(itemToClone);
     });
 
@@ -72,10 +70,14 @@
     document.querySelector('.backgroundBtn').addEventListener('click', function(e) {
       let card = document.querySelector('professor-card').shadowRoot.querySelector(".card");
       if(!card.classList.contains("basic")){
-        document.querySelector('professor-card').shadowRoot.querySelector(".card").classList.add("basic");
+        document.querySelectorAll('professor-card').forEach((item)=>{
+          item.shadowRoot.querySelector(".card").classList.add("basic");
+        });
       }
       else{
-        document.querySelector('professor-card').shadowRoot.querySelector(".card").classList.remove("basic");
+        document.querySelectorAll('professor-card').forEach((item)=>{
+          item.shadowRoot.querySelector(".card").classList.remove("basic");
+        });
       }
     });
 
@@ -84,10 +86,14 @@
       const details = document.querySelector('professor-card').shadowRoot.querySelector('details');
       console.log(details);
       if(details.getAttribute('open')){
-        details.removeAttribute('open');
+        document.querySelectorAll('professor-card').forEach((item)=>{
+          item.shadowRoot.querySelector('details').removeAttribute('open');
+        });
       }
       else{
-        details.setAttribute('open', 'open');
+        document.querySelectorAll('professor-card').forEach((item)=>{
+          item.shadowRoot.querySelector('details').setAttribute('open', 'open');
+        });
       }
     });
 
@@ -95,7 +101,9 @@
     document.querySelector('.titleBtn').addEventListener('click', function(e) {
       let name = prompt("Cyber-chadification");
       if (name){
-          document.querySelector('professor-card').title = name;
+        document.querySelectorAll('professor-card').forEach((item)=>{
+          item.title = name;
+        })  
       }
       
       // Both work, just felt the prior was more reusable
