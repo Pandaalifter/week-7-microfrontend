@@ -116,7 +116,7 @@ class ProfessorCard extends LitElement {
     this.chadLabel = "Details";
     this.top = "Giacobe";
     this.bottom = "Overlaid";
-    this.pic = '../assets/the-moment.png';
+    this.pic = 'https://cdn.discordapp.com/attachments/963095262363017246/1020131830323744788/unknown.png';
   }
 
   render() {
