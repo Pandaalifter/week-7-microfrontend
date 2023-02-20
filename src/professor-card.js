@@ -29,6 +29,10 @@ class ProfessorCard extends LitElement {
       margin-bottom: 10px;
       margin-left: 8px;
     }
+    .card:hover{
+      border: 3px solid purple;
+      box-shadow: 0px 8px 24px yellow;
+    }
     .textbox{
       font-size: 15px;
       margin-left: 112px;
@@ -86,7 +90,7 @@ class ProfessorCard extends LitElement {
                       1px -1px 0 #000,
                       -1px -1px 0 #000;
     }
-    .giaImg{
+    .picStyle{
       width: 200px;
       border-radius: 24px;
       box-shadow: 0px 10px 24px #999;
@@ -94,10 +98,6 @@ class ProfessorCard extends LitElement {
     }
     .basic{
       background-color: hotpink;
-    }
-    .hoverCard{
-      border: 3px solid purple;
-      box-shadow: 0px 8px 24px yellow;
     }
     @media only screen and (min-width: 800px) and (max-width: 1200px){
       .card{
@@ -128,7 +128,7 @@ class ProfessorCard extends LitElement {
         <h1 class="title">${this.title}</h1>
         <h2 class="subtitle">${this.subtitle}</h2>
 
-        <div class="giaImg">
+        <div class="picStyle">
           <meme-maker 
             image-url="${this.pic}" 
             top-text="${this.top}" 
