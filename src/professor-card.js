@@ -67,7 +67,7 @@ class ProfessorCard extends LitElement {
       border: 1px solid #07377a;
       font-size: 18px;
       font-weight: bold;
-      line-height: 22px;
+      line-height: 23px;
     }
     .haxbtn:focus{
       color: #e0e0e0;
