@@ -70,17 +70,27 @@
 
     //change background
     document.querySelector('.backgroundBtn').addEventListener('click', function(e) {
-      let card = document.querySelector('professor-card').shadowRoot.querySelector(".card");
-      if(!card.classList.contains("basic")){
+      if(document.querySelector('professor-card').bool){
         document.querySelectorAll('professor-card').forEach((item)=>{
-          item.shadowRoot.querySelector(".card").classList.add("basic");
+          item.bool = false;
         });
       }
       else{
         document.querySelectorAll('professor-card').forEach((item)=>{
-          item.shadowRoot.querySelector(".card").classList.remove("basic");
+          item.bool = true;
         });
       }
+      
+      // if(!card.classList.contains("basic")){
+      //   document.querySelectorAll('professor-card').forEach((item)=>{
+      //     item.shadowRoot.querySelector(".card").classList.add("basic");
+      //   });
+      // }
+      // else{
+      //   document.querySelectorAll('professor-card').forEach((item)=>{
+      //     item.shadowRoot.querySelector(".card").classList.remove("basic");
+      //   });
+      // }
     });
 
     //Toggle description

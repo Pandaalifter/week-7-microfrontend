@@ -8,12 +8,17 @@ class ProfessorCard extends LitElement {
     chadLabel: {type: String},
     top: {type: String},
     bottom: {type: String},
-    pic: {type: String}
+    pic: {type: String},
+    bool: {type: Boolean, reflect: true}
   }
 
   static styles = css`
     :host{
       display: inline-block;
+    }
+    :host([bool]) .card{
+      background-color: var(--professor-card-bool-background-color, hotpink);
+      color: yellow;
     }
     .card{
       border-radius: 24px;
@@ -96,9 +101,6 @@ class ProfessorCard extends LitElement {
       border-radius: 24px;
       box-shadow: 0px 10px 24px #999;
       float: left;
-    }
-    .basic{
-      background-color: hotpink;
     }
     @media only screen and (min-width: 800px) and (max-width: 1200px){
       .card{
