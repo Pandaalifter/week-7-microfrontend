@@ -70,14 +70,14 @@
 
     //change background
     document.querySelector('.backgroundBtn').addEventListener('click', function(e) {
-      if(document.querySelector('professor-card').bool){
+      if(document.querySelector('professor-card').changeBackground){
         document.querySelectorAll('professor-card').forEach((item)=>{
-          item.bool = false;
+          item.changeBackground = false;
         });
       }
       else{
         document.querySelectorAll('professor-card').forEach((item)=>{
-          item.bool = true;
+          item.changeBackground = true;
         });
       }
       
@@ -93,20 +93,27 @@
       // }
     });
 
+    //Toggle custom event
+    document.body.addEventListener('opened-changed', (e)=>{
+      console.log(e.detail.value);
+      document.querySelector('.toggleBtn').innerText = e.detail.value ? "Hide" : "Show";
+    })
+
     //Toggle description
     document.querySelector('.toggleBtn').addEventListener('click', function(e) {
-      const details = document.querySelector('professor-card').shadowRoot.querySelector('details');
-      console.log(details);
-      if(details.getAttribute('open')){
-        document.querySelectorAll('professor-card').forEach((item)=>{
-          item.shadowRoot.querySelector('details').removeAttribute('open');
-        });
-      }
-      else{
-        document.querySelectorAll('professor-card').forEach((item)=>{
-          item.shadowRoot.querySelector('details').setAttribute('open', 'open');
-        });
-      }
+      // if(document.querySelector('professor-card').toggleOpening){
+      //   document.querySelectorAll('professor-card').forEach((item)=>{
+      //     item.toggleOpening = false;
+      //   });
+      // }
+      // else{
+      //   document.querySelectorAll('professor-card').forEach((item)=>{
+      //     item.toggleOpening = true;
+      //   });
+      // }
+      document.querySelectorAll('professor-card').forEach((item)=>{
+        item.toggleOpening = !item.toggleOpening;
+      })
     });
 
     //change title

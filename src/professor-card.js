@@ -9,16 +9,16 @@ class ProfessorCard extends LitElement {
     top: {type: String},
     bottom: {type: String},
     pic: {type: String},
-    bool: {type: Boolean, reflect: true}
+    changeBackground: {type: Boolean, reflect: true},
+    toggleOpening: {type: Boolean, reflect: true}
   }
 
   static styles = css`
     :host{
       display: inline-block;
     }
-    :host([bool]) .card{
-      background-color: var(--professor-card-bool-background-color, hotpink);
-      color: yellow;
+    :host([changeBackground]) .card{
+      background-color: var(--professor-card-changeBackground-background-color, hotpink);
     }
     .card{
       border-radius: 24px;
@@ -122,6 +122,28 @@ class ProfessorCard extends LitElement {
     this.top = "Giacobe";
     this.bottom = "Overlaid";
     this.pic = "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png";
+    this.changeBackground = false;
+    this.toggleOpening = false;
+  }
+
+  toggleEvent(e){
+    const state = this.shadowRoot.querySelector('details').getAttribute('open') === "" ? true : false;
+  }
+
+  updated(changedProperties){
+    changedProperties.forEach((oldValue, propName)=>{
+      if(propName === "toggleOpening"){
+        this.dispatchEvent(new CustomEvent('opened-changed', {
+          composed: true,
+          bubbles: true,
+          cancelable: false,
+          detail:{
+            value: this[propName]
+          }
+        }));
+        console.log(`${propName} changed. oldValue: ${oldValue}`);
+      }
+    });
   }
 
   render() {
@@ -140,7 +162,7 @@ class ProfessorCard extends LitElement {
         </div>
 
         <div class="textbox">
-          <details>
+          <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
             <summary class="haxbtn">${this.chadLabel}</summary>
             <div class="description">
               <slot name="gospel"></slot>
