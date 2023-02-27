@@ -41,7 +41,7 @@
       border: 1px solid #07377a;
     }
   </style>
-  <title>professor-card</title>
+  <title>professor-card2</title>
 </head>
 
 <body>
@@ -54,29 +54,29 @@
   </div>
 
   <div class="app">
-    <professor-card>
+    <professor-card2>
         <p>Professor Giacobe may look like a simple man but perceptions can be misleading. Underneath the facade of a simple college of IST professor lies the holiness of an <strong>IST GOD</strong>!</p>
-    </professor-card>
+    </professor-card2>
   </div>
 
-  <script type="module" src="./src/professor-card.js"></script>
+  <script type="module" src="./src/professor-card2.js"></script>
 
   <script>
     //duplicate element
     document.querySelector('.duplicateBtn').addEventListener('click', function(e) {
-      const itemToClone = document.querySelector('professor-card').cloneNode(true);
+      const itemToClone = document.querySelector('professor-card2').cloneNode(true);
       document.querySelector('.app').appendChild(itemToClone);
     });
 
     //change background
     document.querySelector('.backgroundBtn').addEventListener('click', function(e) {
-      if(document.querySelector('professor-card').changeBackground){
-        document.querySelectorAll('professor-card').forEach((item)=>{
+      if(document.querySelector('professor-card2').changeBackground){
+        document.querySelectorAll('professor-card2').forEach((item)=>{
           item.changeBackground = false;
         });
       }
       else{
-        document.querySelectorAll('professor-card').forEach((item)=>{
+        document.querySelectorAll('professor-card2').forEach((item)=>{
           item.changeBackground = true;
         });
       }
@@ -111,7 +111,7 @@
       //     item.toggleOpening = true;
       //   });
       // }
-      document.querySelectorAll('professor-card').forEach((item)=>{
+      document.querySelectorAll('professor-card2').forEach((item)=>{
         item.toggleOpening = !item.toggleOpening;
       })
     });
@@ -120,7 +120,7 @@
     document.querySelector('.titleBtn').addEventListener('click', function(e) {
       let name = prompt("Cyber-chadification");
       if (name){
-        document.querySelectorAll('professor-card').forEach((item)=>{
+        document.querySelectorAll('professor-card2').forEach((item)=>{
           item.title = name;
         })  
       }
@@ -137,8 +137,8 @@
 
     //delete last element
     document.querySelector('.deleteLastBtn').addEventListener('click', function(e) {
-      if (document.querySelector('.app professor-card:last-child') !== document.querySelector('professor-card')){
-        document.querySelector('.app professor-card:last-child').remove();
+      if (document.querySelector('.app professor-card2:last-child') !== document.querySelector('professor-card2')){
+        document.querySelector('.app professor-card2:last-child').remove();
       }
       else{
         alert("YOU CANNOT PURGE THE CYBER CHADS!!!");

@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js"; 
 
-class ProfessorCard extends LitElement {
+class ProfessorCard2 extends LitElement {
   static properties = {
     title: {type: String, reflect: true},
     subtitle: {type: String},
@@ -176,4 +176,4 @@ class ProfessorCard extends LitElement {
   }
 }
 
-customElements.define('professor-card', ProfessorCard);
+customElements.define('professor-card2', ProfessorCard2);
