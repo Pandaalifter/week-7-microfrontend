@@ -95,9 +95,11 @@
 
     //Toggle custom event
     document.body.addEventListener('opened-changed', (e)=>{
-      console.log(e.detail.value);
-      document.querySelector('.toggleBtn').innerText = e.detail.value ? "Hide" : "Show";
-    })
+      if(e.target === document.querySelector('professor-card2')){
+        console.log(e.detail.value);
+        document.querySelector('.toggleBtn').innerText = e.detail.value ? "Hide" : "Show";
+      }
+    });
 
     //Toggle description
     document.querySelector('.toggleBtn').addEventListener('click', function(e) {
