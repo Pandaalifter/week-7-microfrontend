@@ -128,6 +128,7 @@ class ProfessorCard extends LitElement {
 
   toggleEvent(e){
     const state = this.shadowRoot.querySelector('details').getAttribute('open') === "" ? true : false;
+    this.toggleOpening = state;
   }
 
   updated(changedProperties){
@@ -165,7 +166,7 @@ class ProfessorCard extends LitElement {
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
             <summary class="haxbtn">${this.chadLabel}</summary>
             <div class="description">
-              <slot name="gospel"></slot>
+              <slot></slot>
             </div>
           </details>
 
