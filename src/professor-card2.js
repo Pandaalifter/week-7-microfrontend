@@ -5,10 +5,10 @@ class ProfessorCard2 extends LitElement {
   static properties = {
     title: {type: String, reflect: true},
     subtitle: {type: String},
-    chadLabel: {type: String},
+    infoLabel: {type: String},
     top: {type: String},
     bottom: {type: String},
-    pic: {type: String},
+    profilePic: {type: String},
     changeBackground: {type: Boolean, reflect: true},
     toggleOpening: {type: Boolean, reflect: true}
   }
@@ -31,7 +31,7 @@ class ProfessorCard2 extends LitElement {
       background-color: lightgrey;
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       margin-left: 8px;
     }
     .card:hover{
@@ -72,7 +72,7 @@ class ProfessorCard2 extends LitElement {
       border: 1px solid #07377a;
       font-size: 18px;
       font-weight: bold;
-      line-height: 26px;
+      line-height: 22px;
     }
     .haxbtn:focus{
       color: #e0e0e0;
@@ -97,10 +97,16 @@ class ProfessorCard2 extends LitElement {
                       -1px -1px 0 #000;
     }
     .picStyle{
-      width: 200px;
-      border-radius: 24px;
+      max-width: 200px;
+      max-height: 200px;
       box-shadow: 0px 10px 24px #999;
+      border: 1px solid #07377a; 
       float: left;
+    }
+    @media only screen and (max-width: 1366px){
+      .card{
+        margin-left: 4px;
+      }
     }
     @media only screen and (min-width: 800px) and (max-width: 1200px){
       .card{
@@ -118,17 +124,23 @@ class ProfessorCard2 extends LitElement {
     super();
     this.title = "Professor Giacobe";
     this.subtitle = "Chad of Cyber IST";
-    this.chadLabel = "Details";
+    this.infoLabel = "Details";
     this.top = "Giacobe";
     this.bottom = "Overlaid";
-    this.pic = "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png";
+    this.profilePic = "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png";
     this.changeBackground = false;
     this.toggleOpening = false;
   }
 
   toggleEvent(e){
-    const state = this.shadowRoot.querySelector('details').getAttribute('open') === "" ? true : false;
-    this.toggleOpening = state;
+    //const state = this.shadowRoot.querySelector('details').getAttribute('open') === "" ? true : false;
+    if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
+      this.toggleOpening = true;
+    }
+    else{
+      this.toggleOpening = false;
+    }
+    //this.toggleOpening = state;
   }
 
   updated(changedProperties){
@@ -156,7 +168,7 @@ class ProfessorCard2 extends LitElement {
 
         <div class="picStyle">
           <meme-maker 
-            image-url="${this.pic}" 
+            image-url="${this.profilePic}" 
             top-text="${this.top}" 
             bottom-text="${this.bottom}">
           </meme-maker>
@@ -164,7 +176,7 @@ class ProfessorCard2 extends LitElement {
 
         <div class="textbox">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="haxbtn">${this.chadLabel}</summary>
+            <summary class="haxbtn">${this.infoLabel}</summary>
             <div class="description">
               <slot></slot>
             </div>

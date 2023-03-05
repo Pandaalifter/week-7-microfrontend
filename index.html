@@ -66,6 +66,7 @@
     document.querySelector('.duplicateBtn').addEventListener('click', function(e) {
       const itemToClone = document.querySelector('professor-card2').cloneNode(true);
       document.querySelector('.app').appendChild(itemToClone);
+      console.log(itemToClone);
     });
 
     //change background
@@ -80,61 +81,47 @@
           item.changeBackground = true;
         });
       }
-      
-      // if(!card.classList.contains("basic")){
-      //   document.querySelectorAll('professor-card').forEach((item)=>{
-      //     item.shadowRoot.querySelector(".card").classList.add("basic");
-      //   });
-      // }
-      // else{
-      //   document.querySelectorAll('professor-card').forEach((item)=>{
-      //     item.shadowRoot.querySelector(".card").classList.remove("basic");
-      //   });
-      // }
+      console.log(document.querySelector('professor-card2').changeBackground);
     });
 
     //Toggle custom event
     document.body.addEventListener('opened-changed', (e)=>{
       if(e.target === document.querySelector('professor-card2')){
         console.log(e.detail.value);
-        document.querySelector('.toggleBtn').innerText = e.detail.value ? "Hide" : "Show";
+        if(e.detail.value){
+          document.querySelector('.toggleBtn').innerText = "Hide";
+        }
+        else{
+          document.querySelector('.toggleBtn').innerText = "Show"
+        }
       }
+      console.log(document.querySelector('.toggleBtn').innerText);
     });
 
     //Toggle description
     document.querySelector('.toggleBtn').addEventListener('click', function(e) {
-      // if(document.querySelector('professor-card').toggleOpening){
-      //   document.querySelectorAll('professor-card').forEach((item)=>{
-      //     item.toggleOpening = false;
-      //   });
-      // }
-      // else{
-      //   document.querySelectorAll('professor-card').forEach((item)=>{
-      //     item.toggleOpening = true;
-      //   });
-      // }
-      document.querySelectorAll('professor-card2').forEach((item)=>{
-        item.toggleOpening = !item.toggleOpening;
-      })
+      if(document.querySelector('professor-card2').toggleOpening){
+        document.querySelectorAll('professor-card2').forEach((item)=>{
+          item.toggleOpening = false;
+        });
+      }
+      else{
+        document.querySelectorAll('professor-card2').forEach((item)=>{
+          item.toggleOpening = true;
+        });
+      }
+      console.log(document.querySelector('professor-card2').toggleOpening);
     });
 
     //change title
     document.querySelector('.titleBtn').addEventListener('click', function(e) {
-      let name = prompt("Cyber-chadification");
+      let name = prompt("Name the Cyber-Chad");
       if (name){
         document.querySelectorAll('professor-card2').forEach((item)=>{
           item.title = name;
         })  
+        console.log(document.querySelector('professor-card2').title);
       }
-      
-      // Both work, just felt the prior was more reusable
-      // let name = "something else";
-      // if (name!==document.querySelector('professor-card').title){
-      //     document.querySelector('professor-card').title = name;
-      // }
-      // else{
-      //   document.querySelector("professor-card").title = "Professor Giacobe";
-      // }  
     });
 
     //delete last element
