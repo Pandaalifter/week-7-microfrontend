@@ -50,7 +50,7 @@ class ProfessorCard2 extends LitElement {
                       1px -1px 0 #FFFFFF,
                       -1px -1px 0 #FFFFFF;
     }
-    .haxbtn{
+    .btnStyle{
       display:inline-block;
       text-align: center;
       color: white;
@@ -65,7 +65,7 @@ class ProfessorCard2 extends LitElement {
       padding-top: 10px;
       margin-right: 32px;
     }
-    .haxbtn:hover{
+    .btnStyle:hover{
       color: #e0e0e0;
       background-color: #07377a;
       box-shadow: 0px 10px 24px white;
@@ -74,7 +74,7 @@ class ProfessorCard2 extends LitElement {
       font-weight: bold;
       line-height: 22px;
     }
-    .haxbtn:focus{
+    .btnStyle:focus{
       color: #e0e0e0;
       background-color: #07377a;
       box-shadow: 0px 10px 24px white;
@@ -176,7 +176,7 @@ class ProfessorCard2 extends LitElement {
 
         <div class="textbox">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
-            <summary class="haxbtn">${this.infoLabel}</summary>
+            <summary class="btnStyle">${this.infoLabel}</summary>
             <div class="description">
               <slot></slot>
             </div>
