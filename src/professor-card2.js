@@ -163,9 +163,11 @@ class ProfessorCard2 extends LitElement {
     return html`
       <div class="card">
       
+        <!--Text in Top Section-->
         <h1 class="title">${this.title}</h1>
         <h2 class="subtitle">${this.subtitle}</h2>
 
+        <!--Image in Left Section-->
         <div class="picStyle">
           <meme-maker 
             image-url="${this.profilePic}" 
@@ -174,6 +176,7 @@ class ProfessorCard2 extends LitElement {
           </meme-maker>
         </div>
 
+        <!--Button and Text in Right Section-->
         <div class="textbox">
           <details .open="${this.toggleOpening}" @toggle="${this.toggleEvent}">
             <summary class="btnStyle">${this.infoLabel}</summary>
