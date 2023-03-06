@@ -108,14 +108,43 @@ class ProfessorCard2 extends LitElement {
         margin-left: 4px;
       }
     }
-    @media only screen and (min-width: 800px) and (max-width: 1200px){
+    @media only screen and (min-width: 880px) and (max-width: 1280px){
       .card{
         background-color: maroon;
+        width: 376px;
+      }
+      .btnStyle{
+        margin-right: 16px;
       }
     }
-    @media only screen and (max-width: 500px){
+    @media only screen and (max-width: 880px){
       .card{
         background-color: lightblue;
+        width: 320px;
+      }
+      .title{
+        font-size: 20px;
+      }
+      .subtitle{
+        font-size: 14px;
+      }
+      .btnStyle{
+        margin-right: 48px;
+        width: 80px;
+        height: 16px;
+        font-size: 16px;
+        line-height: 8px;
+      }
+      .btnStyle:hover{
+        font-size: 15px;
+        line-height: 8px;
+      }
+      .textbox{
+        font-size: 12px;
+      }
+      .picStyle{
+        max-width: 120px;
+        max-height: 120px;
       }
     }
   `;
