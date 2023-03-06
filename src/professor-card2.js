@@ -132,17 +132,17 @@ class ProfessorCard2 extends LitElement {
     this.toggleOpening = false;
   }
 
+  //Changes state of boolean property "toggleOpening" when the details attribute matches
   toggleEvent(e){
-    //const state = this.shadowRoot.querySelector('details').getAttribute('open') === "" ? true : false;
     if(this.shadowRoot.querySelector('details').getAttribute('open') == ""){
       this.toggleOpening = true;
     }
     else{
       this.toggleOpening = false;
     }
-    //this.toggleOpening = state;
   }
 
+  //Creates new event listener to record when the toggleEvent is invoked
   updated(changedProperties){
     changedProperties.forEach((oldValue, propName)=>{
       if(propName === "toggleOpening"){
