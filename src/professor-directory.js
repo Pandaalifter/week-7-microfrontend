@@ -29,7 +29,7 @@ class ProfessorDirectory extends LitElement {
   }
 
   updateDirectory(){
-    const address = new URL('../api/directory.js', import.meta.url).href;
+    const address = new URL('../api/directories.js', import.meta.url).href;
     const data = fetch(address).then((response) => {
         if(response.ok){
             return response.json();
