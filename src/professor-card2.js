@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js"; 
 
 class ProfessorCard2 extends LitElement {
-  static properties = {
+  static get properties() { return{
     title: {type: String, reflect: true},
     subtitle: {type: String},
     infoLabel: {type: String},
@@ -11,9 +11,9 @@ class ProfessorCard2 extends LitElement {
     profilePic: {type: String},
     changeBackground: {type: Boolean, reflect: true},
     toggleOpening: {type: Boolean, reflect: true}
-  }
+  }}
 
-  static styles = css`
+  static get styles(){ return css`
     :host{
       display: inline-block;
     }
@@ -147,7 +147,7 @@ class ProfessorCard2 extends LitElement {
         max-height: 120px;
       }
     }
-  `;
+  `;}
 
   constructor() {
     super();

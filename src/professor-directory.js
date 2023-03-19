@@ -5,21 +5,21 @@ class ProfessorDirectory extends LitElement {
   static get tag(){
     return 'professor-directory';
   }
-  static properties = {
+  static get properties() { return {
     professors: {type: Array},
     college: {type: String}
-  }
-  static styles = css`
+  }}
+  static get styles(){ return css`
   :host{
     display: block;
   }
   .wrapper{
-    width: 400px;
+    display: inline;
   }
   .item{
-    display: inline-flex;
+    display: inline-block;
   }
-  `;
+  `;}
 
   constructor(){
     super();
@@ -29,8 +29,8 @@ class ProfessorDirectory extends LitElement {
   }
 
   updateDirectory(){
-    const address = new URL('../api/directories.js', import.meta.url).href;
-    const data = fetch(address).then((response) => {
+    const address = '../api/directories';
+    fetch(address).then((response) => {
         if(response.ok){
             return response.json();
         }
@@ -39,7 +39,6 @@ class ProfessorDirectory extends LitElement {
     .then((data) => {
         this.professors = data;
     });
-    console.log(data);
   }
 
   render(){
@@ -54,8 +53,8 @@ class ProfessorDirectory extends LitElement {
                     infoLabel="${professor.infoLabel}"
                     top="${professor.top}"
                     bottom="${professor.bottom}"
-                    profilePic="${professor.profilePic}"
-                    >
+                    profilePic="${professor.profilePic}"> 
+                    Taco Tuesday, the Tuesday of Tacos. Taco time is a taco rhyme. Taco taco taco whopper.
                 </professor-card2>
             </div>
             `)}
