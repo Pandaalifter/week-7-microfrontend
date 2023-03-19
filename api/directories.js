@@ -2,7 +2,7 @@ export default async function handler(request, res) {
 
     const directories = [
         {
-            "title": "API Giacobe",
+            "title": "API Prof. Giacobe",
             "subtitle": "Chad of Cyber JSONs",
             "infoLabel": "Details",
             "top": "API",
@@ -10,7 +10,7 @@ export default async function handler(request, res) {
             "profilePic": "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png"
         },
         {
-            "title": "API Giacobe 2",
+            "title": "API Prof. Giacobe 2",
             "subtitle": "Second Chad of Cyber JSONs",
             "infoLabel": "Details",
             "top": "Giacobe",
@@ -18,7 +18,7 @@ export default async function handler(request, res) {
             "profilePic": "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png"
         },
         {
-            "title": "API Giacobe 3",
+            "title": "API Prof. Giacobe 3",
             "subtitle": "Third Chad of Cyber JSONs",
             "infoLabel": "Details",
             "top": "Giacobe",
@@ -26,7 +26,7 @@ export default async function handler(request, res) {
             "profilePic": "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png"
         },
         {
-            "title": "API Giacobe 4",
+            "title": "API Prof. Giacobe 4",
             "subtitle": "Fourth Chad of Cyber JSONs",
             "infoLabel": "Details",
             "top": "Giacobe",
@@ -34,7 +34,7 @@ export default async function handler(request, res) {
             "profilePic": "https://cdn.discordapp.com/attachments/703281782111338586/1076698279712137346/unknown.png"
         },
         {
-            "title": "API Giacobe 5",
+            "title": "API Prof. Giacobe 5",
             "subtitle": "Fifth Chad of Cyber JSONs",
             "infoLabel": "Details",
             "top": "Giacobe",

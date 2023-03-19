@@ -54,7 +54,7 @@ class ProfessorDirectory extends LitElement {
                     top="${professor.top}"
                     bottom="${professor.bottom}"
                     profilePic="${professor.profilePic}"> 
-                    Taco Tuesday, the Tuesday of Tacos. Taco time is a taco rhyme. Taco taco taco whopper.
+                    IST 256 is on Tuesday. Taco Tuesday, the Tuesday of Tacos. Taco time is a taco rhyme. Taco taco taco whopper.
                 </professor-card2>
             </div>
             `)}
